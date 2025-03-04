@@ -1,14 +1,44 @@
 #include <stdio.h>
 
-// Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
-
 int main() {
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
+    char colunas[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};//Adicionando colunas de A-J
+    int linhas[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};//Adicionando linhas de 1-10
+    int i = 0; //variavel i para loops aninhados
+
+    int tabuleiro [10][10] = { //Adicionando um tabuleiro de 10x10
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,3,0,0},
+        {0,0,0,0,0,0,0,3,0,0},
+        {0,0,0,0,0,0,0,3,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,3,3,3,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0}
+
+    };
+        
+    printf(" *TABULEIRO BATALHA NAVAL* \n");//titulo para aparecer no console
+    printf("   "); //adicionando espaço para organização de exibição
+
+    for (int i = 0; i < 10; i++) {//um for para exibir as colunas de A-J
+        printf("%c ", colunas[i]);//texto para exibição do loop
+    }
+    printf("\n");//usado para saltar linha na exibição das colunas com a primeira linha
+
+    while (i < 10) //while para loops aninhados e exibição das linhas
+    {
+        printf("%2d ", linhas[i]);
+        for (int j = 0; j < 10; j++)//for para exibir linhas e colunas do tabuleiro
+        {
+            printf("%d ", tabuleiro[i][j]);
+        }
+        i++;//incremento para a repetição
+        printf("\n");
+    }
+        
+        
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
